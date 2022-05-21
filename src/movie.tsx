@@ -15,17 +15,19 @@ const Movie: React.FC<Props> = ({ movie }) => {
 
   return (
     <form onSubmit={onSubmit}>
-      <div>
-        <label>Title</label>
+      <div className="mb-3">
+        <label className="form-label">Title</label>
         <input
+          className="form-control"
           value={theMovie.title}
           onChange={(e) => setTheMovie({ ...theMovie, title: e.target.value })}
         />
       </div>
 
-      <div>
-        <label>Overview</label>
+      <div className="mb-3">
+        <label className="form-label">Overview</label>
         <textarea
+          className="form-control"
           value={theMovie.overview}
           onChange={(e) =>
             setTheMovie({ ...theMovie, overview: e.target.value })
@@ -34,9 +36,10 @@ const Movie: React.FC<Props> = ({ movie }) => {
         />
       </div>
 
-      <div>
-        <label>Vote average</label>
+      <div className="mb-3">
+        <label className="form-label">Vote average</label>
         <input
+          className="form-control"
           type="number"
           value={theMovie.vote_average}
           onChange={(e) =>
@@ -45,17 +48,20 @@ const Movie: React.FC<Props> = ({ movie }) => {
         />
       </div>
 
-      <div>
-        <label>Release date</label>
+      <div className="mb-3">
+        <label className="form-label">Release date</label>
         <input
+          className="form-control"
           value={theMovie.release_date}
           onChange={(e) =>
             setTheMovie({ ...theMovie, release_date: e.target.value })
           }
         />
       </div>
-      <div>
-        <button type="submit">Submit</button>
+      <div className="mb-3">
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
       </div>
     </form>
   );

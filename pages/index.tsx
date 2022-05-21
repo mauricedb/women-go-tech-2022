@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Movie from '../src/movie';
 import { MovieInterface } from '../src/types';
-import styles from '../styles/Home.module.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const movie19404: MovieInterface = {
   id: 19404,
@@ -14,7 +14,7 @@ const movie19404: MovieInterface = {
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div className="container">
       <Movie movie={movie19404} />
     </div>
   );
