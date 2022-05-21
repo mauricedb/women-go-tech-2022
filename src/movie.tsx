@@ -8,8 +8,13 @@ interface Props {
 const Movie: React.FC<Props> = ({ movie }) => {
   const [theMovie, setTheMovie] = React.useState(movie);
 
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    alert(JSON.stringify(theMovie, null, 2));
+  };
+
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <div>
         <label>Title</label>
         <input
@@ -48,6 +53,9 @@ const Movie: React.FC<Props> = ({ movie }) => {
             setTheMovie({ ...theMovie, release_date: e.target.value })
           }
         />
+      </div>
+      <div>
+        <button type="submit">Submit</button>
       </div>
     </form>
   );
