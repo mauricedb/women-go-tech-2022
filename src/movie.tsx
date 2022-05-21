@@ -1,35 +1,31 @@
 import React from 'react';
+import { MovieInterface } from './types';
 
-const movie19404 = {
-  id: 19404,
-  overview:
-    'Raj is a rich, carefree, happy-go-lucky second generation NRI. Simran is the daughter of Chaudhary Baldev Singh.',
-  release_date: '1995-10-20',
-  title: 'Dilwale Dulhania Le Jayenge',
-  vote_average: 8.7,
-};
+interface Props {
+  movie: MovieInterface;
+}
 
-const Movie: React.FC = () => {
+const Movie: React.FC<Props> = ({ movie }) => {
   return (
     <form>
       <div>
         <label>Title</label>
-        <p>{movie19404.title} </p>
+        <p>{movie.title} </p>
       </div>
 
       <div>
         <label>Overview</label>
-        <p>{movie19404.overview} </p>
+        <p>{movie.overview} </p>
       </div>
 
       <div>
         <label>Vote average</label>
-        <p>{movie19404.vote_average} </p>
+        <p>{movie.vote_average} </p>
       </div>
 
       <div>
         <label>Release date</label>
-        <p>{movie19404.release_date} </p>
+        <p>{movie.release_date} </p>
       </div>
     </form>
   );
