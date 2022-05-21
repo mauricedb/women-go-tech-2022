@@ -6,26 +6,48 @@ interface Props {
 }
 
 const Movie: React.FC<Props> = ({ movie }) => {
+  const [theMovie, setTheMovie] = React.useState(movie);
+
   return (
     <form>
       <div>
         <label>Title</label>
-        <p>{movie.title} </p>
+        <input
+          value={theMovie.title}
+          onChange={(e) => setTheMovie({ ...theMovie, title: e.target.value })}
+        />
       </div>
 
       <div>
         <label>Overview</label>
-        <p>{movie.overview} </p>
+        <textarea
+          value={theMovie.overview}
+          onChange={(e) =>
+            setTheMovie({ ...theMovie, overview: e.target.value })
+          }
+          rows={5}
+        />
       </div>
 
       <div>
         <label>Vote average</label>
-        <p>{movie.vote_average} </p>
+        <input
+          type="number"
+          value={theMovie.vote_average}
+          onChange={(e) =>
+            setTheMovie({ ...theMovie, vote_average: e.target.valueAsNumber })
+          }
+        />
       </div>
 
       <div>
         <label>Release date</label>
-        <p>{movie.release_date} </p>
+        <input
+          value={theMovie.release_date}
+          onChange={(e) =>
+            setTheMovie({ ...theMovie, release_date: e.target.value })
+          }
+        />
       </div>
     </form>
   );
