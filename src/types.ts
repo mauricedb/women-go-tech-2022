@@ -4,4 +4,5 @@ export interface MovieInterface {
   release_date: string;
   title: string;
   vote_average: number;
+  poster_path: string;
 }
