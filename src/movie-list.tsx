@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { MovieInterface } from './types';
 
@@ -22,6 +23,9 @@ const MovieList: React.FC<Props> = ({ movies }) => {
               <div className="card-body">
                 <h5 className="card-title">{movie.title}</h5>
                 <p className="card-text">{movie.overview}</p>
+                <Link href={`/movie/${movie.id}`} className="card-link">
+                  Details
+                </Link>
               </div>
             </div>
           </div>
