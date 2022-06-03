@@ -22,11 +22,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
 };
 
 const Home: NextPage<Props> = ({ movies }) => {
-  return (
-    <div className="container">
-      <MovieList movies={movies} />
-    </div>
-  );
+  return <MovieList movies={movies} />;
 };
 
 export default Home;

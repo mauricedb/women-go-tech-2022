@@ -25,11 +25,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
 };
 
 const MoviePage: NextPage<Props> = ({ movie }) => {
-  return (
-    <div className="container">
-      <Movie movie={movie} />
-    </div>
-  );
+  return <Movie movie={movie} />;
 };
 
 export default MoviePage;
